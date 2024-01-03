@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        #calculadora {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #display {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .numero-button {
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+
+        .operacion-button {
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            background-color: #ffb366;  /* Mantén el color naranja para operadores */
+            border-radius: 20px;  /* Hace que todos los botones sean redondeados */
+            border: none;  /* Elimina el borde */
+            color: #333;  /* Cambia el color del texto a negro */
+        }
+
+        #dividir {
+            width: 40px;  /* Ajusta el tamaño según tu preferencia */
+            height: 40px;  /* Ajusta el tamaño según tu preferencia */
+            background-color: #ffb366;  /* Mantén el color naranja para operadores */
+            border-radius: 20px;  /* Hace que el botón sea redondeado */
+            border: none;  /* Elimina el borde */
+            color: #333;  /* Cambia el color del texto a negro */
+            margin-top: 5px;  /* Ajusta el margen superior para alinear con otros botones de operación */
+        }
+
+        .small-button {
+            font-size: 14px;
+            width: 25px;  /* Ajusta el tamaño según tu preferencia */
+            height: 25px;  /* Ajusta el tamaño según tu preferencia */
+            margin: 5px;
+        }
+
+        /* Cambia el color del subrayado al color del fondo */
+        b {
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <input type="text" id="display" readonly>
+        <br>
+
+        <button class="numero-button" onclick="limpiarCalculadora()">C</button>
+        <button class="numero-button" onclick="borrarCaracter()">←</button>
+        <b>______</b>
+        <button class="operacion-button" onclick="dividir()">/</button>
+
+        <br>
+        <button class="numero-button" onclick="agregarNumero(1)">1</button>
+        <button class="numero-button" onclick="agregarNumero(2)">2</button>
+        <button class="numero-button" onclick="agregarNumero(3)">3</button>
+        <button class="operacion-button" onclick="agregarNumero('*')">*</button>
+
+        <br>
+
+        <button class="numero-button" onclick="agregarNumero(4)">4</button>
+        <button class="numero-button" onclick="agregarNumero(5)">5</button>
+        <button class="numero-button" onclick="agregarNumero(6)">6</button>
+        <button class="operacion-button" onclick="agregarNumero('-')">-</button>
+
+        <br>
+
+        <button class="numero-button" onclick="agregarNumero(7)">7</button>
+        <button class="numero-button" onclick="agregarNumero(8)">8</button>
+        <button class="numero-button" onclick="agregarNumero(9)">9</button>
+        <button class="operacion-button" onclick="agregarNumero('+')">+</button>
+
+        <br>
+
+        <div></div>  <!-- Espacio vacío -->
+
+        <button class="numero-button" onclick="agregarNumero(0)">0</button>
+        <button class="numero-button" onclick="calcularResultado()">=</button>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
